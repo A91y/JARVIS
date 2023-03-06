@@ -1,10 +1,8 @@
-import pyttsx3
 import os
-import speech_recognition as sr
-from wishMe_func import wishMe
-from speak_func import speak
-from takeCommand_func import takeCommand
-from webbrow_func import webbrowser
+from core.wishMe_func import wishMe
+from core.speak_func import speak
+from core.takeCommand_func import takeCommand
+from core.webbrow_func import webbrowser
 
 app_paths = {
     'google_chrome_path': '"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"'
