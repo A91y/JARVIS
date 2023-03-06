@@ -1,31 +1,37 @@
-import pyttsx3, os
+import pyttsx3
+import os
 import speech_recognition as sr
+from wishMe_func import wishMe
+from speak_func import speak
+from takeCommand_func import takeCommand
+from webbrow_func import webbrowser
 
-r = sr.Recognizer()
-with sr.Microphone() as source:
-    print("Say something!")
-    audio = r.record(source, duration=5)
-    text = r.recognize_google(audio)
-print(text)
+app_paths = {
+    'google_chrome_path': '"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"'
+}
 path = os.path.dirname(os.path.realpath(__file__))
 
-engine = pyttsx3.init() # object creation
 
-# voices = engine.getProperty('voices')   
-# for voice in voices:
-#     print(voice.id)
-rate = engine.getProperty('rate')
-# print(rate)
-engine.setProperty('rate', 125) 
-text = text.lower()
-if "code" in text:
-    engine.say("Opening Visual Studio Code")
-    os.system("code")
-if "screenshot" in text:
-    engine.say("Taking screenshot")
-    os.system(f'python "{path}\screenshot-py\main.py"')
-if ("chrome" or "google") in text:
-    engine.say("Opening Chrome")
-    os.system('"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"')
-engine.runAndWait()
-engine.stop()
+if __name__ == "__main__":
+    wishMe()
+    while True:
+        query = takeCommand().lower()
+        if "code" in query:
+            speak("Opening Visual Studio Code")
+            os.system("code")
+
+        elif "screenshot" in query:
+            speak("Taking screenshot")
+            os.system(f'python "{path}\screenshot_py\main.py"')
+        elif ("chrome" or "google") in query:
+            speak("Opening Chrome")
+            os.startfile(app_paths["google_chrome_path"])
+        elif 'open youtube' in query:
+            webbrowser.get('chrome').open("youtube.com", new=1)
+        elif 'open google' in query:
+            webbrowser.get('chrome').open("google.com", new=1)
+        elif 'open stackoverflow' in query:
+            webbrowser.get('chrome').open("stackoverflow.com", new=1)
+
+        elif 'close' in query:
+            exit()

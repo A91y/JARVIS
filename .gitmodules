@@ -1,0 +1,3 @@
+[submodule "screenshot_py"]
+	path = screenshot_py
+	url = https://github.com/A91y/screenshot_py
