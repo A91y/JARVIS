@@ -1,0 +1,6 @@
+venv
+activate.bat
+*.png
+old_backup/
+ss.bat
+__pycache__/
