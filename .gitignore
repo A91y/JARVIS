@@ -4,3 +4,5 @@ activate.bat
 old_backup/
 ss.bat
 __pycache__/
+.env
+remember.txt
