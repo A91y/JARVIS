@@ -1,5 +1,4 @@
 import pyttsx3
-
 engine = pyttsx3.init("sapi5")
 # voices = engine.getProperty('voices')
 # print(voices)
@@ -18,8 +17,13 @@ def speak(audio):
                       IMPORT THIS FUNCTION AS spfc
     <<<<<<<<<<<<<<<<------------- Thank You -------------->>>>>>>>>>>>>>>>>>
     '''
+    if 'sqrt' in audio:
+        audio = audio.replace("sqrt", " square root of ")
+    if '/' in audio:
+        audio = audio.replace("/", " by ")
+
     engine.say(audio)
     engine.runAndWait()
 
 if __name__ == "__main__":
-    speak('Hi Sir, can you hear me')
+    speak('Hello, can you hear me')

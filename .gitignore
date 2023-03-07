@@ -6,3 +6,4 @@ ss.bat
 __pycache__/
 .env
 remember.txt
+test/

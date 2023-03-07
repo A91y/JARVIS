@@ -11,7 +11,7 @@ path = os.path.dirname(os.path.realpath(__file__))
 
 
 if __name__ == "__main__":
-    # wishMe()
+    wishMe()
     while True:
         query = takeCommand().lower()
         if "code" in query:
@@ -29,11 +29,12 @@ if __name__ == "__main__":
             webbrowser.get('chrome').open("google.com", new=1)
         elif 'open stackoverflow' in query:
             webbrowser.get('chrome').open("stackoverflow.com", new=1)
-        elif 'previous' and 'command' in query:
+        elif 'previous' in query and 'command' in query:
             with open('remember.txt', 'r') as f:
                 speak(f.read())
             f.close()
-        elif "calculate" in query:
+            continue
+        elif "calculate" in query or "what is" in query or "who is" in query or "find" in query:
             question = query
             answer = computational_intelligence(question)
             print("Answer:", answer)

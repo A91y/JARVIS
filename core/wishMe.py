@@ -21,7 +21,7 @@ def wishMe():
     else :
         spfc.speak("Good Evening, Ayush!")
 
-    spfc.speak("I am JARVIS. Please tell me how may I help you?")
+    spfc.speak("I am JARVIS. Signing In!")
 
 
 if __name__ == "__main__":
