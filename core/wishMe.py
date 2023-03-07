@@ -1,8 +1,8 @@
 import datetime
 try:
-    import speak_func as spfc
+    import speak as spfc
 except:
-    import core.speak_func as spfc 
+    import core.speak as spfc 
 hour = int(datetime.datetime.now().hour)
 
 
@@ -13,13 +13,13 @@ def wishMe():
     <<<<<<<<<<<<<<<<------------- Thank You -------------->>>>>>>>>>>>>>>>>>
     '''
     if hour >= 0 and hour < 12 :
-        spfc.speak("Good Morning, Sir!")
+        spfc.speak("Good Morning, Ayush!")
 
     elif hour >= 12 and hour < 18 :
-        spfc.speak("Good Afternoon, Sir!")
+        spfc.speak("Good Afternoon, Ayush!")
 
     else :
-        spfc.speak("Good Evening, Sir!")
+        spfc.speak("Good Evening, Ayush!")
 
     spfc.speak("I am JARVIS. Please tell me how may I help you?")
 
