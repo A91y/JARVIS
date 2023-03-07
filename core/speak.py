@@ -10,6 +10,7 @@ engine = pyttsx3.init("sapi5")
 # print(rate)
 # engine.setProperty('rate', 125)
 
+
 def speak(audio):
     '''
     <<<<<<<<<<<<<<<<<--------- Read Me Please ------------->>>>>>>>>>>>>>>>>
@@ -24,6 +25,7 @@ def speak(audio):
 
     engine.say(audio)
     engine.runAndWait()
+
 
 if __name__ == "__main__":
     speak('Hello, can you hear me')

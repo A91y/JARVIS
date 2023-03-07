@@ -8,7 +8,9 @@ try:
     from config import config
 except:
     from ..config import config
+
 app_id = config.wolframalpha_id
+
 
 def computational_intelligence(question):
     try:

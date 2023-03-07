@@ -6,6 +6,7 @@ voices = engine.getProperty('voices')
 # Only voice at 0 index works, others are useless..........
 engine.setProperty('voice', voices[0].id)
 
+
 def speak(audio):
     '''
     <<<<<<<<<<<<<<<<<--------- Read Me Please ------------->>>>>>>>>>>>>>>>>
@@ -15,6 +16,7 @@ def speak(audio):
     '''
     engine.say(audio)
     engine.runAndWait()
+
 
 if __name__ == "__main__":
     speak(input("Enter ->"))

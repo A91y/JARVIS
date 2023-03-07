@@ -4,6 +4,9 @@ from core.speak import speak
 from core.takeCommand import takeCommand
 from core.webbrow import webbrowser
 from core.calculatewolf import computational_intelligence
+from core.copy2clip import copy2clip
+from core.passwordgen import newpassword
+
 app_paths = {
     'google_chrome_path': '"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"'
 }
@@ -41,6 +44,10 @@ if __name__ == "__main__":
             speak(answer)
         elif 'close' in query:
             exit()
+        elif 'generate' in query and 'password' in query:
+            password = newpassword(12)
+            copy2clip(password)
+            speak("Password copied to clipboard")
         if query != ".":
             with open("remember.txt", "w") as f:
                 f.write(query)
