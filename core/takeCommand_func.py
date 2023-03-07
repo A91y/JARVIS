@@ -1,8 +1,8 @@
 import speech_recognition as sr
 try:
-    import speak as spfc
+    import speak_func as spfc
 except:
-    import core.speak as spfc 
+    import core.speak_func as spfc 
 
 
 def takeCommand():
