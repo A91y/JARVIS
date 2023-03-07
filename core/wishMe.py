@@ -1,8 +1,8 @@
 import datetime
 try:
-    import speak_func as spfc
+    import speak as spfc
 except:
-    import core.speak_func as spfc 
+    import core.speak as spfc 
 hour = int(datetime.datetime.now().hour)
 
 
